@@ -12,7 +12,19 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="l-header"></header>
+    <header class="l-header">
+      <img src="img/logo-box.png" alt="H-Builder" class="l-header__logo" />
+      <button
+        class="l-header__navbtn"
+        onClick="document.querySelector('body').classList.toggle('open')"
+      >
+        <span class="l-header__navbtn-bar"></span>
+        <span class="l-header__sr-only">
+          MENU
+        </span>
+      </button>
+    </header>
+
     <section class="p-home-hero">
       <h1 class="p-home-hero__heading">
         Earthy Home
