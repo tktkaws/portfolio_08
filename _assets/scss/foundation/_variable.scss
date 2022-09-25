@@ -1,9 +1,9 @@
 /* 基本サイズ */
-$size1-half: calc(var(--size1) / 2);
 $size1: 5vw;
-$size2: calc(var(--size1) * 2);
-$size3: calc(var(--size1) * 3);
-$size4: calc(var(--size1) * 4);
+$size1-half: calc($size1 / 2);
+$size2: calc($size1 * 2);
+$size3: calc($size1 * 3);
+$size4: calc($size1 * 4);
 
 // breakpoint
 // ──────────────────────────────

@@ -1,4 +1,86 @@
 @use "./../foundation/variable" as *;
+@use "./../foundation/color" as *;
+// $c-primary: #96a199;
+// $c-secondary: #e9ece8;
+// $c-accent: #b75865;
+// $c-text: #54603f;
+// $c-white: #ffffff;
 
 .l-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: $size1;
+
+  &__logo {
+    // height: 76px;
+    height: max(76px, $size2 * 0.8);
+    width: max(94px, $size2);
+  }
+
+  &__navbtn {
+    all: unset;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    width: max(46px, $size1);
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    color: $c-primary;
+  }
+  &__navbtn-bar {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    grid-area: 1/1;
+    transition: transform 0.5s;
+  }
+
+  &__navbtn::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    grid-area: 1/1;
+    transition: transform 0.5s;
+    transform: translateY(-12px);
+  }
+
+  &__navbtn::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    grid-area: 1/1;
+    transition: transform 0.5s;
+    transform: translateY(12px);
+  }
+
+  &__sr-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+}
+
+.open .l-header {
+  &__navbtn-bar {
+    transform: scale(0);
+  }
+
+  &__navbtn::before {
+    transform: translateY(0) rotate(45deg);
+  }
+  &__navbtn::after {
+    transform: translateY(0) rotate(-45deg);
+  }
 }
