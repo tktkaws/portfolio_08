@@ -1,0 +1,24 @@
+@use "./../../foundation/font" as *;
+
+.p-home-hero {
+  &__heading {
+    font-size: $clamp-size;
+    font-family: $f-lora;
+    font-weight: 400;
+    background: linear-gradient(92.21deg, #54603f 6.06%, #a2cf4f 95.93%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  &__subtitle {
+    font-size: $subtitle__clamp-size;
+    font-family: $f-serif;
+    font-weight: 500;
+    line-height: 1.8;
+  }
+  &__desc {
+    font-size: $desc__clamp-size;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+}

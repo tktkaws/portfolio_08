@@ -1,14 +1,14 @@
 @use "./../foundation/color" as *;
-$c-primary: #96a199;
-$c-secondary: #e9ece8;
-$c-accent: #b75865;
-$c-text: #54603f;
-$c-white: #ffffff;
+// $c-primary: #96a199;
+// $c-secondary: #e9ece8;
+// $c-accent: #b75865;
+// $c-text: #54603f;
+// $c-white: #ffffff;
 
 @use "./../foundation/font" as *;
-$f-base: "Noto Sans JP", sans-serif;
-$f-lora: "Lora", serif;
-$f-serif: "Noto Serif JP", serif;
+// $f-base: "Noto Sans JP", sans-serif;
+// $f-lora: "Lora", serif;
+// $f-serif: "Noto Serif JP", serif;
 
 html {
   // font-size: 62.5%;
@@ -24,6 +24,11 @@ body {
   // min-width: 350px;
   // width: 100%;
   // overflow-x: hidden;
+}
+
+// リファクタリング
+section + section {
+  margin-block-start: $section-margin;
 }
 
 img,

@@ -22,11 +22,10 @@
 /*-------------------
   * project
   -------------------*/
-// @use "./object/project/fv";
-// @use "./object/project/theme";
-// @use "./object/project/solution";
-// @use "./object/project/faq";
-// @use "./object/project/cv";
+@use "./object/project/home-hero";
+@use "./object/project/home-first";
+@use "./object/project/home-second";
+@use "./object/project/home-third";
 
 /*-------------------
   * utility
