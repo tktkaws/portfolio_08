@@ -1,0 +1,19 @@
+@use "./../foundation/variable" as *;
+
+.l-header {
+  position: sticky;
+  top: 0;
+  background-color: $color-base;
+  z-index: 1;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: inline-block;
+    max-width: 40%;
+  }
+}
