@@ -1,4 +1,5 @@
 @use "./../../foundation/font" as *;
+@use "./../../foundation/variable" as *;
 
 .p-home-hero {
   // リファクタリング　可変になってない
@@ -52,5 +53,63 @@
 
   .c-container > * > * {
     grid-column: 2/-2;
+  }
+}
+
+@media (min-width: 768px) {
+  .p-home-hero {
+    .c-container {
+      grid-template-columns: 1026fr 378fr;
+      grid-template-rows: auto $size4;
+      column-gap: $size1-half;
+      row-gap: 0;
+    }
+
+    &__text-wrapper {
+      display: revert;
+      grid-column: 1/-1;
+      grid-row: 1;
+      z-index: 2;
+      margin-inline-end: $size2;
+    }
+
+    &__desc {
+      width: 21em;
+      margin-block-start: 2em;
+      margin-inline-start: auto;
+    }
+
+    &__photo01 {
+      grid-column: 1;
+      grid-row: 1;
+      aspect-ratio: 1026/772;
+      height: auto;
+    }
+    &__photo02 {
+      grid-column: 2;
+      grid-row: 1/-1;
+      align-self: end;
+      aspect-ratio: 378/648;
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .p-home-hero {
+    &__text-wrapper {
+      display: contents;
+    }
+    .p-home-hero__heading-wrapper {
+      grid-column: inherit;
+      grid-row: inherit;
+      margin-inline-end: inherit;
+    }
+    .p-home-hero__desc {
+      grid-column: 1;
+      grid-row: 2;
+      width: 80%;
+      margin-inline-start: $size1;
+    }
   }
 }

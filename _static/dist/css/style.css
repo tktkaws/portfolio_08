@@ -549,6 +549,55 @@ th {
   grid-column: 2/-2;
 }
 
+@media (min-width: 768px) {
+  .p-home-hero .c-container {
+    grid-template-columns: 1026fr 378fr;
+    grid-template-rows: auto 20vw;
+    column-gap: 2.5vw;
+    row-gap: 0;
+  }
+  .p-home-hero__text-wrapper {
+    display: revert;
+    grid-column: 1/-1;
+    grid-row: 1;
+    z-index: 2;
+    margin-inline-end: 10vw;
+  }
+  .p-home-hero__desc {
+    width: 21em;
+    margin-block-start: 2em;
+    margin-inline-start: auto;
+  }
+  .p-home-hero__photo01 {
+    grid-column: 1;
+    grid-row: 1;
+    aspect-ratio: 1026/772;
+    height: auto;
+  }
+  .p-home-hero__photo02 {
+    grid-column: 2;
+    grid-row: 1/-1;
+    align-self: end;
+    aspect-ratio: 378/648;
+    height: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .p-home-hero__text-wrapper {
+    display: contents;
+  }
+  .p-home-hero .p-home-hero__heading-wrapper {
+    grid-column: inherit;
+    grid-row: inherit;
+    margin-inline-end: inherit;
+  }
+  .p-home-hero .p-home-hero__desc {
+    grid-column: 1;
+    grid-row: 2;
+    width: 80%;
+    margin-inline-start: 5vw;
+  }
+}
 .p-home-first__num {
   font-size: 6.4rem;
   font-family: "Lora", serif;
