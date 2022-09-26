@@ -1,8 +1,10 @@
 @use "./../../foundation/font" as *;
 @use "./../../foundation/variable" as *;
+@use "./../../foundation/color" as *;
 
 .p-home-hero {
   // リファクタリング　可変になってない
+  // pcサイズでmarginが0になっていないため　decor::beforeの位置がfigmaで取得した値からずれている
   $min-size: 15;
   $max-size: 0;
   margin-block-start: clamp(0px, $fluid-size, 15px);
@@ -110,6 +112,63 @@
       grid-row: 2;
       width: 80%;
       margin-inline-start: $size1;
+    }
+  }
+}
+
+// 装飾
+// リファクタリング　floccs
+.decor {
+  position: relative;
+  &::before {
+    content: "";
+    background-color: $c-secondary;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  &::after {
+    content: url(../img/Accent.svg);
+    // リファクタリング
+    $min-size: 47;
+    $max-size: 61;
+    width: $clamp-size;
+    position: absolute;
+    line-height: 0;
+  }
+}
+
+.p-home-hero.decor {
+  &::before {
+    left: 18.67%;
+    right: 0%;
+    top: 23.69%;
+    bottom: -8.24%;
+  }
+
+  &::after {
+    right: 0.8%;
+    bottom: -16.4%;
+    // リファクタリング
+    transform: rotate(-159deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .p-home-hero.decor {
+    &::before {
+      left: 47.43%;
+      right: 10%;
+      top: 40.84%;
+      bottom: 16.39%;
+    }
+
+    &::after {
+      right: 78.86%;
+      bottom: 85.13%;
+      // リファクタリング
+      transform: rotate(154deg);
     }
   }
 }
