@@ -1,5 +1,16 @@
+@use "./../../foundation/variable" as *;
+
 .c-inner {
   max-width: 1220px;
   margin: 0 auto;
   padding: 10px 30px;
+}
+
+.c-container {
+  display: grid;
+  grid-template-columns: repeat(3, $size1) auto repeat(3, $size1);
+  row-gap: 44px;
+  & > * {
+    grid-column: 2/-2;
+  }
 }
