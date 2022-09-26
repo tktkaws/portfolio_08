@@ -598,6 +598,48 @@ th {
     margin-inline-start: 5vw;
   }
 }
+.decor {
+  position: relative;
+}
+.decor::before {
+  content: "";
+  background-color: #e9ece8;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.decor::after {
+  content: url(../img/Accent.svg);
+  width: clamp(3.3125rem, 8.7323943662vw + 1.2658450704rem, 9.125rem);
+  position: absolute;
+  line-height: 0;
+}
+
+.p-home-hero.decor::before {
+  left: 18.67%;
+  right: 0%;
+  top: 23.69%;
+  bottom: -8.24%;
+}
+.p-home-hero.decor::after {
+  right: 0.8%;
+  bottom: -16.4%;
+  transform: rotate(-159deg);
+}
+
+@media (min-width: 768px) {
+  .p-home-hero.decor::before {
+    left: 47.43%;
+    right: 10%;
+    top: 40.84%;
+    bottom: 16.39%;
+  }
+  .p-home-hero.decor::after {
+    right: 78.86%;
+    bottom: 85.13%;
+    transform: rotate(154deg);
+  }
+}
 .p-home-first__num {
   font-size: 6.4rem;
   font-family: "Lora", serif;
