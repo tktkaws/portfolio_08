@@ -1,8 +1,4 @@
 @charset "UTF-8";
-/* a 傾き */
-/* b 切片 */
-/* y = ax + b 可変サイズ */
-/* clamp(最小サイズ, 可変サイズ, 最大サイズ) */
 body {
   color: #54603f;
   font-family: "Noto Sans JP", sans-serif;
@@ -15,7 +11,7 @@ figure img {
 }
 
 section + section {
-  margin-block-start: clamp(8.75rem, 8.7323943662vw + 1.2658450704rem, 18rem);
+  margin-block-start: clamp(8.75rem, 13.896713615vw + 5.4929577465rem, 18rem);
 }
 
 img,
@@ -505,7 +501,7 @@ th {
 }
 
 .p-home-hero {
-  margin-block-start: clamp(0px, 8.7323943662vw + 1.2658450704rem, 15px);
+  margin-block-start: clamp(0px, -1.4084507042vw + 1.2676056338rem, 15px);
 }
 .p-home-hero__heading-wrapper {
   grid-row: 1;
@@ -522,13 +518,13 @@ th {
   background-clip: text;
 }
 .p-home-hero__subtitle {
-  font-size: clamp(1.625rem, 8.7323943662vw + 1.2658450704rem, 2.625rem);
+  font-size: clamp(1.625rem, 1.5023474178vw + 1.2728873239rem, 2.625rem);
   font-family: "Noto Serif JP", serif;
   font-weight: 500;
   line-height: 1.8;
 }
 .p-home-hero__desc {
-  font-size: clamp(0.875rem, 8.7323943662vw + 1.2658450704rem, 1rem);
+  font-size: clamp(0.875rem, 0.1877934272vw + 0.8309859155rem, 1rem);
   font-weight: 400;
   line-height: 1.8;
 }
@@ -536,7 +532,7 @@ th {
   grid-column: 1/-1;
   grid-row: 1;
   height: 588px;
-  margin-block-start: clamp(0px, 8.7323943662vw + 1.2658450704rem, 15px);
+  margin-block-start: clamp(2.4375rem, 8.544600939vw + 0.4348591549rem, 8.125rem);
 }
 .p-home-hero__photo02 {
   grid-column: 3/-1;
@@ -610,7 +606,7 @@ th {
 }
 .decor::after {
   content: url(../img/Accent.svg);
-  width: clamp(3.3125rem, 8.7323943662vw + 1.2658450704rem, 9.125rem);
+  width: clamp(2.9375rem, 1.3145539906vw + 2.6294014085rem, 3.8125rem);
   position: absolute;
   line-height: 0;
 }
@@ -649,13 +645,13 @@ th {
   background-clip: text;
 }
 .p-home-first__heading {
-  font-size: clamp(1.625rem, 8.7323943662vw + 1.2658450704rem, 2.625rem);
+  font-size: clamp(1.625rem, 1.5023474178vw + 1.2728873239rem, 2.625rem);
   font-family: "Noto Serif JP", serif;
   font-weight: 500;
   line-height: 1.8;
 }
 .p-home-first__desc {
-  font-size: clamp(0.875rem, 8.7323943662vw + 1.2658450704rem, 1rem);
+  font-size: clamp(0.875rem, 0.1877934272vw + 0.8309859155rem, 1rem);
   font-weight: 400;
   line-height: 1.8;
 }
@@ -669,13 +665,13 @@ th {
   background-clip: text;
 }
 .p-home-second__heading {
-  font-size: clamp(1.625rem, 8.7323943662vw + 1.2658450704rem, 2.625rem);
+  font-size: clamp(1.625rem, 1.5023474178vw + 1.2728873239rem, 2.625rem);
   font-family: "Noto Serif JP", serif;
   font-weight: 500;
   line-height: 1.8;
 }
 .p-home-second__desc {
-  font-size: clamp(0.875rem, 8.7323943662vw + 1.2658450704rem, 1rem);
+  font-size: clamp(0.875rem, 0.1877934272vw + 0.8309859155rem, 1rem);
   font-weight: 400;
   line-height: 1.8;
 }
@@ -689,13 +685,13 @@ th {
   background-clip: text;
 }
 .p-home-third__heading {
-  font-size: clamp(1.625rem, 8.7323943662vw + 1.2658450704rem, 2.625rem);
+  font-size: clamp(1.625rem, 1.5023474178vw + 1.2728873239rem, 2.625rem);
   font-family: "Noto Serif JP", serif;
   font-weight: 500;
   line-height: 1.8;
 }
 .p-home-third__desc {
-  font-size: clamp(0.875rem, 8.7323943662vw + 1.2658450704rem, 1rem);
+  font-size: clamp(0.875rem, 0.1877934272vw + 0.8309859155rem, 1rem);
   font-weight: 400;
   line-height: 1.8;
 }

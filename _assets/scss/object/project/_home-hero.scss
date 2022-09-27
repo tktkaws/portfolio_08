@@ -1,13 +1,15 @@
 @use "./../../foundation/font" as *;
 @use "./../../foundation/variable" as *;
 @use "./../../foundation/color" as *;
+@use "./../../foundation/function" as *;
 
 .p-home-hero {
   // リファクタリング　可変になってない
   // pcサイズでmarginが0になっていないため　decor::beforeの位置がfigmaで取得した値からずれている
-  $min-size: 15;
-  $max-size: 0;
-  margin-block-start: clamp(0px, $fluid-size, 15px);
+  // $min-size: 15;
+  // $max-size: 0;
+  // margin-block-start: clamp(0px, $fluid-size, 15px);
+  margin-block-start: fluid-margin(15, 0);
 
   &__heading-wrapper {
     grid-row: 1;
@@ -15,7 +17,7 @@
     text-align: right;
   }
   &__heading {
-    font-size: $clamp-size;
+    font-size: fluid-size(53, 146);
     font-family: $f-lora;
     font-weight: 400;
     background: linear-gradient(92.21deg, #54603f 6.06%, #a2cf4f 95.93%);
@@ -24,13 +26,13 @@
     background-clip: text;
   }
   &__subtitle {
-    font-size: $subtitle__clamp-size;
+    font-size: fluid-size(26, 42);
     font-family: $f-serif;
     font-weight: 500;
     line-height: 1.8;
   }
   &__desc {
-    font-size: $desc__clamp-size;
+    font-size: fluid-size(14, 16);
     font-weight: 400;
     line-height: 1.8;
   }
@@ -40,9 +42,10 @@
     grid-row: 1;
     height: 588px;
     // リファクタリング　可変になってない
-    $min-size: 39;
-    $max-size: 130;
-    margin-block-start: clamp(0px, $fluid-size, 15px);
+    // $min-size: 39;
+    // $max-size: 130;
+    // margin-block-start: clamp(0px, $fluid-size, 15px);
+    margin-block-start: fluid-size(39, 130);
   }
   &__photo02 {
     grid-column: 3/-1;
@@ -130,10 +133,7 @@
 
   &::after {
     content: url(../img/Accent.svg);
-    // リファクタリング
-    $min-size: 47;
-    $max-size: 61;
-    width: $clamp-size;
+    width: fluid-size(47, 61);
     position: absolute;
     line-height: 0;
   }
