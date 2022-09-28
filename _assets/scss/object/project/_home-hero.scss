@@ -1,14 +1,7 @@
-@use "./../../foundation/font" as *;
-@use "./../../foundation/variable" as *;
-@use "./../../foundation/color" as *;
-@use "./../../foundation/function" as *;
+@use "./../../foundation/global" as *;
 
 .p-home-hero {
-  // リファクタリング　可変になってない
-  // pcサイズでmarginが0になっていないため　decor::beforeの位置がfigmaで取得した値からずれている
-  // $min-size: 15;
-  // $max-size: 0;
-  // margin-block-start: clamp(0px, $fluid-size, 15px);
+  // リファクタリング pcサイズでmarginが0になっていない
   margin-block-start: fluid-margin(15, 0);
 
   &__heading-wrapper {
@@ -41,10 +34,6 @@
     grid-column: 1/-1;
     grid-row: 1;
     height: 588px;
-    // リファクタリング　可変になってない
-    // $min-size: 39;
-    // $max-size: 130;
-    // margin-block-start: clamp(0px, $fluid-size, 15px);
     margin-block-start: fluid-size(39, 130);
   }
   &__photo02 {
@@ -61,7 +50,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@include mq(md) {
   .p-home-hero {
     .c-container {
       grid-template-columns: 1026fr 378fr;
@@ -100,7 +89,8 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+// @media (min-width: 768px) and (max-width: 1023px)
+@include mq(md-lg) {
   .p-home-hero {
     &__text-wrapper {
       display: contents;
@@ -120,7 +110,7 @@
 }
 
 // 装飾
-// リファクタリング　floccs
+// リファクタリング　floccs deg
 .decor {
   position: relative;
   &::before {
@@ -145,6 +135,13 @@
     right: 0%;
     top: 23.69%;
     bottom: -8.24%;
+
+    @include mq(md) {
+      left: 47.43%;
+      right: 10%;
+      top: 40.84%;
+      bottom: 16.39%;
+    }
   }
 
   &::after {
@@ -152,19 +149,8 @@
     bottom: -16.4%;
     // リファクタリング
     transform: rotate(-159deg);
-  }
-}
 
-@media (min-width: 768px) {
-  .p-home-hero.decor {
-    &::before {
-      left: 47.43%;
-      right: 10%;
-      top: 40.84%;
-      bottom: 16.39%;
-    }
-
-    &::after {
+    @include mq(md) {
       right: 78.86%;
       bottom: 85.13%;
       // リファクタリング
