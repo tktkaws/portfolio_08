@@ -1,18 +1,13 @@
-// breakpoint
-// ──────────────────────────────
-@mixin breakpoint($point) {
-  @if $point == tablet {
-    @media (min-width: 640px) {
-      @content;
-    }
+$breakpoints: (
+  "sm": "(min-width: 375px)",
+  "md": "(min-width: 768px)",
+  "lg": "(min-width: 1023px)",
+  "xl": "(min-width: 1440px)",
+  "md-lg": "(min-width: 768px) and (max-width: 1023px)",
+);
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
   }
-  @if $point == pc {
-    @media (min-width: 750px) {
-      @content;
-    }
-  }
-}
-@include breakpoint(tablet) {
-}
-@include breakpoint(pc) {
 }

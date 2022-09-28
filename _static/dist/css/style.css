@@ -618,12 +618,6 @@ th {
   top: 23.69%;
   bottom: -8.24%;
 }
-.p-home-hero.decor::after {
-  right: 0.8%;
-  bottom: -16.4%;
-  transform: rotate(-159deg);
-}
-
 @media (min-width: 768px) {
   .p-home-hero.decor::before {
     left: 47.43%;
@@ -631,12 +625,20 @@ th {
     top: 40.84%;
     bottom: 16.39%;
   }
+}
+.p-home-hero.decor::after {
+  right: 0.8%;
+  bottom: -16.4%;
+  transform: rotate(-159deg);
+}
+@media (min-width: 768px) {
   .p-home-hero.decor::after {
     right: 78.86%;
     bottom: 85.13%;
     transform: rotate(154deg);
   }
 }
+
 .p-home-first__num {
   font-size: 6.4rem;
   font-family: "Lora", serif;
