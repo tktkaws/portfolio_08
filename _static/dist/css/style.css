@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* 基本サイズ */
 body {
   color: #54603f;
   font-family: "Noto Sans JP", sans-serif;
@@ -36,7 +37,7 @@ a:hover {
   box-sizing: border-box;
 }
 
-/* 基本サイズ */ /*! destyle.css v3.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+/*! destyle.css v3.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
 /* ============================================ */
 *,
