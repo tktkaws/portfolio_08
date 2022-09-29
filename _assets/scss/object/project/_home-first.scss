@@ -1,6 +1,18 @@
 @use "./../../foundation/global" as *;
 
 .p-home-first {
+  // リファクタリング
+  .c-container {
+    row-gap: 24px;
+  }
+
+  &__text-wrapper {
+    display: contents;
+  }
+  &__heading-wrapper {
+    grid-column: 2/-2;
+  }
+
   &__num {
     font-size: 6.4rem;
     font-family: $f-lora;
@@ -15,9 +27,144 @@
     font-weight: 500;
     line-height: 1.8;
   }
+  &__desc-wrapper {
+    // gridの最後のアイテム
+    order: 1;
+    grid-column: 2/-4;
+  }
   &__desc {
     font-size: fluid-size(14, 16);
     font-weight: 400;
     line-height: 1.8;
+  }
+  &__link {
+    display: block;
+    margin-block-start: fluid-size(25, 45);
+    font-family: $f-lora;
+    font-size: 16px;
+    font-weight: 400;
+    &::after {
+      content: url(./../img/more.svg);
+      margin-inline-start: 24px;
+    }
+  }
+
+  &__photo01 {
+    grid-column: 1/-2;
+    height: 399px;
+  }
+  &__photo02 {
+    grid-column: 4/-1;
+    height: 173px;
+  }
+}
+
+@include mq(md) {
+  .p-home-first {
+    margin-block-start: calc($size1 * -1);
+    // リファクタリング
+    .c-container {
+      grid-template-columns: $size2 630fr 377fr;
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas:
+        ". photo01 ."
+        "num heading02 photo02"
+        ". desc photo02";
+      column-gap: $size1-half;
+      row-gap: 0;
+      margin-inline: $size1 $size2;
+    }
+
+    &__heading-wrapper {
+      display: contents;
+    }
+    &__num {
+      font-size: fluid-size(60, 103);
+      grid-area: num;
+    }
+    &__heading {
+      grid-area: heading02;
+      margin-block: $size1 $size1-half;
+    }
+    &__desc-wrapper {
+      grid-area: desc;
+      max-width: 29em;
+    }
+    &__photo01 {
+      grid-area: photo01;
+      aspect-ratio: 630/792;
+      height: auto;
+    }
+    &__photo02 {
+      grid-area: photo02;
+      height: auto;
+      // 画像を上に引き伸ばす
+      margin-block-start: -34px;
+    }
+  }
+}
+
+// 装飾
+// リファクタリング　floccs deg utility?
+.decor {
+  position: relative;
+  &::before {
+    content: "";
+    background-color: $c-secondary;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  &::after {
+    content: url(../img/Accent.svg);
+    width: fluid-size(47, 61);
+    position: absolute;
+    line-height: 0;
+  }
+}
+
+.p-home-first.decor {
+  &::before {
+    left: 0%;
+    right: 9.87%;
+    top: 36.93%;
+    bottom: -5.72%;
+
+    @include mq(md) {
+      left: 0%;
+      right: 15%;
+      top: 30.75%;
+      bottom: -8.02%;
+    }
+  }
+
+  &::after {
+    right: 34.94%;
+    bottom: -16.13%;
+    // リファクタリング
+    transform: rotate(137deg);
+
+    @include mq(md) {
+      right: 80.95%;
+      bottom: -15.23%;
+      // リファクタリング
+      transform: rotate(151deg);
+    }
+  }
+
+  .c-container::after {
+    content: url(../img/Accent.svg);
+    width: fluid-size(47, 61);
+    position: absolute;
+    line-height: 0;
+    display: none;
+
+    @include mq(md) {
+      display: revert;
+      right: 20%;
+      bottom: 65%;
+      transform: rotate(-153degdeg);
+    }
   }
 }
