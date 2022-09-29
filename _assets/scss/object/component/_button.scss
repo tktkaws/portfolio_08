@@ -1,4 +1,24 @@
 @use "./../../foundation/global" as *;
 
-.c-button {
+.c-btn {
+  font-size: fluid-size(20, 36);
+  font-family: $f-base;
+  font-weight: 500;
+  display: flex;
+  &::before {
+    content: url("../img/deco-left.svg");
+    width: 2em;
+    margin-top: -1em;
+  }
+  &::after {
+    content: url("../img/deco-right.svg");
+    width: 2em;
+    margin-top: -1em;
+  }
+  a {
+    padding: 1em;
+    border-radius: 2em;
+    color: $c-white;
+    background-color: $c-accent;
+  }
 }

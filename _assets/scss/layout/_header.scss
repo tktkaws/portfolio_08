@@ -64,6 +64,37 @@
     position: absolute;
     width: 1px;
   }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: linear-gradient(
+      0.96deg,
+      rgba(84, 96, 63, 0.9) 0.35%,
+      rgba(162, 207, 79, 0.9) 182.75%
+    );
+    color: $c-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 44px;
+
+    transition: transform 0.5s;
+  }
+
+  &__nav-logo {
+    width: fluid-size(120, 200);
+  }
+  &__nav-menus {
+    font-size: fluid-size(14, 18);
+    display: flex;
+    gap: 2em;
+  }
 }
 
 .open .l-header {
@@ -77,4 +108,17 @@
   &__navbtn::after {
     transform: translateY(0) rotate(-45deg);
   }
+  &__nav {
+    transform: translate(-100%, 0);
+  }
+  &__navbtn {
+    color: $c-white;
+    z-index: 200;
+  }
+}
+
+.open {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
 }

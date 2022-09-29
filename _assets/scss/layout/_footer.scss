@@ -1,4 +1,22 @@
 @use "./../foundation/global" as *;
 
 .l-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 44px;
+  padding-block: 100px;
+  background-color: $c-primary;
+  color: $c-white;
+
+  &__logo {
+    width: fluid-size(120, 200);
+  }
+  &__menus {
+    font-size: fluid-size(14, 18);
+    display: flex;
+    gap: 2em;
+  }
 }

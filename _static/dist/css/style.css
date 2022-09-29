@@ -475,6 +475,30 @@ th {
   position: absolute;
   width: 1px;
 }
+.l-header__nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: linear-gradient(0.96deg, rgba(84, 96, 63, 0.9) 0.35%, rgba(162, 207, 79, 0.9) 182.75%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 44px;
+  transition: transform 0.5s;
+}
+.l-header__nav-logo {
+  width: clamp(7.5rem, 7.5117370892vw + 5.7394366197rem, 12.5rem);
+}
+.l-header__nav-menus {
+  font-size: clamp(0.875rem, 0.3755868545vw + 0.786971831rem, 1.125rem);
+  display: flex;
+  gap: 2em;
+}
 
 .open .l-header__navbtn-bar {
   transform: scale(0);
@@ -484,6 +508,38 @@ th {
 }
 .open .l-header__navbtn::after {
   transform: translateY(0) rotate(-45deg);
+}
+.open .l-header__nav {
+  transform: translate(-100%, 0);
+}
+.open .l-header__navbtn {
+  color: #ffffff;
+  z-index: 200;
+}
+
+.open {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+}
+
+.l-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 44px;
+  padding-block: 100px;
+  background-color: #96a199;
+  color: #ffffff;
+}
+.l-footer__logo {
+  width: clamp(7.5rem, 7.5117370892vw + 5.7394366197rem, 12.5rem);
+}
+.l-footer__menus {
+  font-size: clamp(0.875rem, 0.3755868545vw + 0.786971831rem, 1.125rem);
+  display: flex;
+  gap: 2em;
 }
 
 .c-inner {
@@ -499,6 +555,29 @@ th {
 }
 .c-container > * {
   grid-column: 2/-2;
+}
+
+.c-btn {
+  font-size: clamp(1.25rem, 1.5023474178vw + 0.8978873239rem, 2.25rem);
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  display: flex;
+}
+.c-btn::before {
+  content: url("../img/deco-left.svg");
+  width: 2em;
+  margin-top: -1em;
+}
+.c-btn::after {
+  content: url("../img/deco-right.svg");
+  width: 2em;
+  margin-top: -1em;
+}
+.c-btn a {
+  padding: 1em;
+  border-radius: 2em;
+  color: #ffffff;
+  background-color: #b75865;
 }
 
 .p-home-hero {
@@ -1057,6 +1136,14 @@ th {
   }
 }
 
+.p-home-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding-block: 200px;
+}
 .u-inline-block {
   display: inline-block;
 } /*--------------------------------------*
