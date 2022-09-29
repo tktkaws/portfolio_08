@@ -1,6 +1,19 @@
 @use "./../../foundation/global" as *;
 
 .p-home-second {
+  // リファクタリング
+  .c-container {
+    row-gap: 24px;
+  }
+
+  &__text-wrapper {
+    display: contents;
+  }
+  &__heading-wrapper {
+    grid-column: 2/-2;
+    text-align: right;
+  }
+
   &__num {
     font-size: 6.4rem;
     font-family: $f-lora;
@@ -10,14 +23,139 @@
     background-clip: text;
   }
   &__heading {
+    // リファクタリング？
     font-size: fluid-size(26, 42);
     font-family: $f-serif;
     font-weight: 500;
     line-height: 1.8;
   }
+  &__desc-wrapper {
+    // gridの最後のアイテム
+    order: 1;
+    grid-column: 4/-2;
+  }
   &__desc {
     font-size: fluid-size(14, 16);
     font-weight: 400;
     line-height: 1.8;
+  }
+  &__link {
+    display: block;
+    margin-block-start: fluid-size(25, 45);
+    font-family: $f-lora;
+    font-size: 16px;
+    font-weight: 400;
+    &::after {
+      content: url(./../img/more.svg);
+      margin-inline-start: 24px;
+    }
+  }
+
+  &__photo01 {
+    grid-column: 2/-1;
+    height: 399px;
+  }
+  &__photo02 {
+    grid-column: 1/-4;
+    height: 173px;
+  }
+}
+
+@include mq(md) {
+  .p-home-second {
+    margin-block-start: calc($size1 * -1);
+    // リファクタリング
+    .c-container {
+      grid-template-columns: 540fr 684fr;
+      grid-template-rows: repeat(2, auto);
+      grid-template-areas:
+        "photo01 photo01"
+        "photo02 text";
+      gap: $size1;
+      margin-inline-start: $size1;
+    }
+
+    &__text-wrapper {
+      display: revert;
+      grid-area: text;
+      margin-inline-end: $size1;
+    }
+    &__photo01 {
+      grid-area: photo01;
+      margin-inline-start: $size2;
+      aspect-ratio: 1224/731;
+      height: auto;
+    }
+    &__photo02 {
+      grid-area: photo02;
+      height: auto;
+      // 画像を上に引き伸ばす
+      // margin-block-start: -34px;
+    }
+
+    &__heading-wrapper {
+      text-align: left;
+    }
+    // &__num {
+    //   font-size: fluid-size(60, 103);
+    //   grid-area: num;
+    // }
+    // &__heading {
+    //   grid-area: heading02;
+    //   margin-block: $size1 $size1-half;
+    // }
+    &__desc-wrapper {
+      max-width: 29em;
+    }
+  }
+}
+
+// 装飾
+// リファクタリング　floccs deg utility?
+.decor {
+  position: relative;
+  &::before {
+    content: "";
+    background-color: $c-secondary;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  &::after {
+    content: url(../img/Accent.svg);
+    width: fluid-size(47, 61);
+    position: absolute;
+    line-height: 0;
+  }
+}
+
+.p-home-second.decor {
+  &::before {
+    left: 9.87%;
+    right: 0%;
+    top: 34.55%;
+    bottom: -5.81%;
+
+    @include mq(md) {
+      left: 32.64%;
+      right: 0%;
+      top: -7.29%;
+      bottom: -7.29%;
+    }
+  }
+
+  &::after {
+    right: 19.23%;
+    bottom: -14.85%;
+    // リファクタリング
+    transform: rotate(-159deg);
+
+    @include mq(md) {
+      right: 32.29%;
+      bottom: -17.25%;
+      // リファクタリング
+      transform: rotate(-139deg);
+    }
   }
 }

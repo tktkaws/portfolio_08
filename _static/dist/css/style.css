@@ -788,6 +788,16 @@ th {
   }
 }
 
+.p-home-second .c-container {
+  row-gap: 24px;
+}
+.p-home-second__text-wrapper {
+  display: contents;
+}
+.p-home-second__heading-wrapper {
+  grid-column: 2/-2;
+  text-align: right;
+}
 .p-home-second__num {
   font-size: 6.4rem;
   font-family: "Lora", serif;
@@ -802,10 +812,110 @@ th {
   font-weight: 500;
   line-height: 1.8;
 }
+.p-home-second__desc-wrapper {
+  order: 1;
+  grid-column: 4/-2;
+}
 .p-home-second__desc {
   font-size: clamp(0.875rem, 0.1877934272vw + 0.8309859155rem, 1rem);
   font-weight: 400;
   line-height: 1.8;
+}
+.p-home-second__link {
+  display: block;
+  margin-block-start: clamp(1.5625rem, 1.8779342723vw + 1.1223591549rem, 2.8125rem);
+  font-family: "Lora", serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.p-home-second__link::after {
+  content: url(./../img/more.svg);
+  margin-inline-start: 24px;
+}
+.p-home-second__photo01 {
+  grid-column: 2/-1;
+  height: 399px;
+}
+.p-home-second__photo02 {
+  grid-column: 1/-4;
+  height: 173px;
+}
+
+@media (min-width: 768px) {
+  .p-home-second {
+    margin-block-start: -5vw;
+  }
+  .p-home-second .c-container {
+    grid-template-columns: 540fr 684fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "photo01 photo01" "photo02 text";
+    gap: 5vw;
+    margin-inline-start: 5vw;
+  }
+  .p-home-second__text-wrapper {
+    display: revert;
+    grid-area: text;
+    margin-inline-end: 5vw;
+  }
+  .p-home-second__photo01 {
+    grid-area: photo01;
+    margin-inline-start: 10vw;
+    aspect-ratio: 1224/731;
+    height: auto;
+  }
+  .p-home-second__photo02 {
+    grid-area: photo02;
+    height: auto;
+  }
+  .p-home-second__heading-wrapper {
+    text-align: left;
+  }
+  .p-home-second__desc-wrapper {
+    max-width: 29em;
+  }
+}
+.decor {
+  position: relative;
+}
+.decor::before {
+  content: "";
+  background-color: #e9ece8;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.decor::after {
+  content: url(../img/Accent.svg);
+  width: clamp(2.9375rem, 1.3145539906vw + 2.6294014085rem, 3.8125rem);
+  position: absolute;
+  line-height: 0;
+}
+
+.p-home-second.decor::before {
+  left: 9.87%;
+  right: 0%;
+  top: 34.55%;
+  bottom: -5.81%;
+}
+@media (min-width: 768px) {
+  .p-home-second.decor::before {
+    left: 32.64%;
+    right: 0%;
+    top: -7.29%;
+    bottom: -7.29%;
+  }
+}
+.p-home-second.decor::after {
+  right: 19.23%;
+  bottom: -14.85%;
+  transform: rotate(-159deg);
+}
+@media (min-width: 768px) {
+  .p-home-second.decor::after {
+    right: 32.29%;
+    bottom: -17.25%;
+    transform: rotate(-139deg);
+  }
 }
 
 .p-home-third__num {
