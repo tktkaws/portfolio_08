@@ -1,6 +1,7 @@
 @use "./../../foundation/global" as *;
 
 .p-home-second {
+  margin-block-start: fluid-size(140, 288);
   // リファクタリング
   .c-container {
     row-gap: 24px;
@@ -63,7 +64,6 @@
 
 @include mq(md) {
   .p-home-second {
-    margin-block-start: calc($size1 * -1);
     // リファクタリング
     .c-container {
       grid-template-columns: 540fr 684fr;
